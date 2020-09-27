@@ -1,0 +1,26 @@
+site_name: python 101 course
+theme:
+  feature:
+    tabs: true
+  favicon: 'assets/img/favicon.ico'
+  name: 'material'
+  language: 'ru'
+  palette:
+    primary: 'black'
+    accent: 'indigo'
+copyright: 'copyleft &copy; copyright'
+
+nav:
+  - Первая неделя:
+    - Баш: Первая неделя/Баш.md
+  - Вторая неделя:
+    - Гит: Вторая неделя/Гит.md
+  - Что значит "сделать": done.md
+
+extra:
+  search:
+    language: 'en, ru'
+
+markdown_extensions:
+  - codehilite
+  - pymdownx.tabbed
