@@ -1,5 +1,7 @@
 site_name: python 101 course
 theme:
+  features:
+    - navigation.tabs
   feature:
     tabs: true
   favicon: 'assets/img/favicon.ico'
