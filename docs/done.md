@@ -1,2 +1,3 @@
 «Сделать» — значит получить результат к заданному сроку и с заданным качеством. Есть нужный результат — сделано, нет результата — не сделано.
-https://ksoftware.livejournal.com/202173.html
+
+[https://ksoftware.livejournal.com/202173.html](https://ksoftware.livejournal.com/202173.html)

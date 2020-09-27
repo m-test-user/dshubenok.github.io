@@ -14,10 +14,11 @@ copyright: 'copyleft &copy; copyright'
 
 nav:
   - Первая неделя:
-    - Баш: Первая неделя/Баш.md
+    - Линукс и Баш: week1/bash.md
   - Вторая неделя:
-    - Гит: Вторая неделя/Гит.md
-  - Что значит "сделать": done.md
+    - soon: week2/soon.md
+  - Что здесь происходит?: wtf.md
+  - Что значит «сделать»: done.md
 
 extra:
   search:
@@ -25,4 +26,3 @@ extra:
 
 markdown_extensions:
   - codehilite
-  - pymdownx.tabbed
