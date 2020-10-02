@@ -287,7 +287,7 @@ cat file | grep '#' | wc -l > str_with_hash
 
 Команда `nano` — запустить консольный редактор nano (привет, кэп!):
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4e6e6d3a-64b1-42bc-9ab6-aba9f2f4eeac/nano.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4e6e6d3a-64b1-42bc-9ab6-aba9f2f4eeac/nano.png)
+![](/img/nano.png)
 
 Нано очень дружелюбный: внизу у него есть список горячих клавиш (значок `^` означает `Ctrl`). Попрактикуйся немного с ними, это понадобится для выполнения практического задания. 
 
