@@ -15,6 +15,7 @@ copyright: 'copyleft &copy; copyright'
 nav:
   - Первая неделя:
     - Линукс и Баш: week1/bash.md
+    - Гит и Гитхаб: week1/git.md
   - Вторая неделя:
     - soon: week2/soon.md
   - Что здесь происходит?: wtf.md
