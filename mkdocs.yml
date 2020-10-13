@@ -17,7 +17,8 @@ nav:
     - Линукс и Баш: week1/bash.md
     - Гит и Гитхаб: week1/git.md
   - Вторая неделя:
-    - soon: week2/soon.md
+    - GitHub Flow и ветки: week2/github.md
+    - Bash-скриптинг: week2/bash-scripting.md
   - Что здесь происходит?: wtf.md
   - Что значит «сделать»: done.md
 
