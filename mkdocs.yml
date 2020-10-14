@@ -6,7 +6,7 @@ theme:
     tabs: true
   favicon: 'assets/img/favicon.ico'
   name: 'material'
-  language: 'en, ru'
+  language: 'ru'
   palette:
     primary: 'black'
     accent: 'indigo'
