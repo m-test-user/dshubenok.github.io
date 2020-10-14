@@ -22,7 +22,7 @@ alias s="ssh username@84.201.133.176"
 
 ```bash
 echo 'alias gp="git push"' >> ~/.bash_profile
-. ~/.bashrc
+. ~/.bash_profile
 ```
 
 Чтобы посмотреть список всех алиасов, набери команду alias.
