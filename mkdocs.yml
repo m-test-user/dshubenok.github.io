@@ -21,6 +21,8 @@ nav:
     - Bash-скриптинг: week2/bash-scripting.md
   - Третья неделя:
     - Настройка окружения: week3/vscode.md
+    - Основы Python: week3/python_intro.md
+    - Ветвления и итерации: week3/if_for.md
   - Что здесь происходит?: wtf.md
   - Что значит «сделать»: done.md
 
