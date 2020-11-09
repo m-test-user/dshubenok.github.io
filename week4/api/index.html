@@ -1,0 +1,1139 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.4">
+    
+    
+      
+        <title>Интерфейсы и API - python 101 course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.358818c7.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f0267088.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="indigo">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="python 101 course" class="md-header-nav__button md-logo" aria-label="python 101 course">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            python 101 course
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Интерфейсы и API
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../week1/bash/" class="md-tabs__link">
+          Первая неделя
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../week2/github/" class="md-tabs__link">
+          Вторая неделя
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../week3/vscode/" class="md-tabs__link">
+          Третья неделя
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Четвертая неделя
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="python 101 course" class="md-nav__button md-logo" aria-label="python 101 course">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    python 101 course
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Первая неделя
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Первая неделя" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Первая неделя
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week1/bash/" class="md-nav__link">
+      Линукс и Баш
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week1/git/" class="md-nav__link">
+      Гит и Гитхаб
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Вторая неделя
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Вторая неделя" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Вторая неделя
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week2/github/" class="md-nav__link">
+      GitHub Flow и ветки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week2/bash-scripting/" class="md-nav__link">
+      Bash-скриптинг
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Третья неделя
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Третья неделя" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Третья неделя
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week3/vscode/" class="md-nav__link">
+      Настройка окружения
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week3/python_intro/" class="md-nav__link">
+      Основы Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week3/if_for/" class="md-nav__link">
+      Ветвления и итерации
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Четвертая неделя
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Четвертая неделя" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Четвертая неделя
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Интерфейсы и API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Интерфейсы и API
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    Интерфейсы и API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    REST API и как работает интернет
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-requests" class="md-nav__link">
+    HTTP-запросы из кода. Библиотека requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    Формат JSON
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-" class="md-nav__link">
+    Подробнее про HTTP-запросы
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-twilio" class="md-nav__link">
+    Пример работы с API: Twilio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Обработка исключений
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Логирование
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Что дальше?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Практика
+  </a>
+  
+    <nav class="md-nav" aria-label="Практика">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Подготовка
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    Задание 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    Задание 2 (необязательное)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../wtf/" class="md-nav__link">
+      Что здесь происходит?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../done/" class="md-nav__link">
+      Что значит «сделать»
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    Интерфейсы и API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    REST API и как работает интернет
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-requests" class="md-nav__link">
+    HTTP-запросы из кода. Библиотека requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    Формат JSON
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-" class="md-nav__link">
+    Подробнее про HTTP-запросы
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-twilio" class="md-nav__link">
+    Пример работы с API: Twilio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Обработка исключений
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Логирование
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Что дальше?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Практика
+  </a>
+  
+    <nav class="md-nav" aria-label="Практика">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Подготовка
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    Задание 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    Задание 2 (необязательное)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Интерфейсы и API</h1>
+                
+                <h2 id="api">Интерфейсы и API</h2>
+<p>На этой неделе мы поговорим об API — Application Programming Interface. Ключевое слово тут <strong>Interface</strong>. Что такое интерфейс? Это что-то такое, посредством чего мы взаимодействуем с системой. </p>
+<p>У нас есть какая-то сложная система и простой интерфейс, который позволяет взаимодействовать с этой системой, не задумываясь о её внутреннем устройстве. </p>
+<p>Пример: автомобиль. Внутри он устроен очень сложно, но тебе не нужно разбираться в его внутреннем устройстве, достаточно лишь крутить руль и нажимать на педали. Руль и педали в данном случае — это <strong>интерфейс</strong> управления автомобилем. </p>
+<p>Ещё пример: человек. Мы можем взаимодействовать с другим человеком посредством голосового интерфейса. Или языком жестов. Или как-то ещё. </p>
+<p>В общем, понятие номер один — <strong>интерфейс это средство взаимодействия</strong>. С этим разобрались. Идём дальше. </p>
+<p>Второе: интерфейс должен быть как-то стандартизирован. Чтобы взаимодействовать с другим человеком голосом, ты должен изучить этот стандарт — в данном случае выучить язык. </p>
+<p>У сложных компьютерных программ тоже есть свои стандартизированные интерфейсы, так называемые API, которые позволяют общаться с ними на одном языке. Например, API есть у всех популярных сервисов, таких как ВКонтакте, Telegram, даже у GitHub.</p>
+<p>У API тоже есть свои стандарты, мы сейчас обсудим самый популярный из них — REST API.</p>
+<h2 id="rest-api">REST API и как работает интернет</h2>
+<p>Совсем чуточку истории. Рой Филдинг, которого можно назвать одним из создателей интернета, в своей диссертации описал стандарт передачи данных через протокол HTTP: <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm</a></p>
+<p>Читать эту диссертацию не обязательно, я постараюсь пересказать её своими словами. Но для начала нужно понять несколько базовых вещей. Начнем с того, <a href="https://github.com/alex/what-happens-when">как работает интернет</a>.</p>
+<p>Если максимально упрощать, то примерно так:</p>
+<p>По всему миру есть очень много устройств, которые объединены в сеть. Глобальную сеть. По всему миру под землёй и на дне океана проложены огромные кабели, они соединяют континенты, страны и города через огромные дата-центры. В любом крупном городе есть дата-центр, который прокладывает чуть менее толстый кабель к интернет-провайдеру, в свою очередь интернет-провайдер прокладывает ещё менее толстый кабель в отдельные районы города и к твоему дому, чтобы ты мог пользоваться этой сетью. Это очень упрощено, но суть такова — все компьютеры связаны огромной сетью. </p>
+<p>В этой сети между собой взаимодействуют устройства. Условно эти устройства можно разделить на две категории: <strong>клиент</strong> и <strong>сервер</strong>. Клиент получает информацию. Сервер раздаёт информацию. Когда ты со своего смартфона заходишь на сайт прогноза погоды, твой браузер на смартфоне в данном случае клиент, а сервер прогноза погоды...ну, понятно. </p>
+<p>Клиент и сервер общаются посредством <strong>запросов</strong>. Клиент посылает серверу запрос "хочу получить данные", сервер ему эти данные возвращает (если всё окей). </p>
+<p>У клиента и сервера есть свои уникальные IP-адреса. </p>
+<p>IP-адреса сложно держать в голове, поэтому существует специальная система DNS (Domain Name System) — система доменных имён. Она позволяет зарегистрировать для ip-адреса сервера какой-нибудь понятный домен, например <a href="http://python101.online">python101.online</a> вместо 185.199.108.153. Так гораздо удобнее. </p>
+<p>Запросы чаще всего осуществляются по протоколу HTTP (Hypertext Transfer Protocol).</p>
+<p>Допустим, ты, как клиент, хочешь открыть страницу <a href="https://python101.online/">https://python101.online</a>. Ты вводишь адрес (так называемый URL, Uniform Resource Locator) в браузере, браузер спрашивает у системы DNS, какой IP-адрес скрывается за этим доменом, совершает запрос на этот IP-адрес, ему возвращается результат. Результат может быть в формате HTML (язык разметки, который позволяет браузеру отрисовать страницу) или в любом другом, например в формате картинки или чистых данных. Подробнее об этом можно почитать здесь: <a href="https://habr.com/ru/company/htmlacademy/blog/254825/">https://habr.com/ru/company/htmlacademy/blog/254825/</a></p>
+<p>Но это всё про браузер. А когда возникает необходимость передавать данные в чистом виде, например, такие как прогноз погоды, нам не нужно получать HTML-страницу, нам нужно только название города и температура в этом городе. Для работы с такими кейсами в том числе и был придумана стандартизация REST, о которой было сказано выше. </p>
+<p>REST API — это правила для передачи данных по сети интернет, стандарт, по которому общаются разные сервисы. </p>
+<p>Сейчас мы будем делать HTTP-запросы прямо из кода на Питоне. И в этом нам поможет библиотека <strong>requests</strong>: ****<a href="https://requests.readthedocs.io/en/master/">https://requests.readthedocs.io/en/master/</a></p>
+<h2 id="http-requests">HTTP-запросы из кода. Библиотека requests</h2>
+<p>Чтобы совершать HTTP-запросы из кода на Питоне существует встроенная библиотека <strong>urllib</strong>: <a href="https://docs.python.org/3/library/urllib.html">https://docs.python.org/3/library/urllib.html</a></p>
+<p>Но так сложилось, что более удобный аналог, который является оберткой для встроенной библиотекой: <a href="https://requests.readthedocs.io/en/master/">https://requests.readthedocs.io/en/master/</a> Мы будем использовать его.</p>
+<p>Создай файл <code>spam.py</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://python101.online&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+
+<p>В ответ придёт HTML-код страницы сайта нашего курса:</p>
+<p><img alt="" src="/img/python101_html.png" /></p>
+<p>Этот HTML-код предназначен для браузера и он используется для отрисовки страницы. </p>
+<p>В переменной <code>response</code> у нас теперь лежит объект ответа, мы вызвали у него метод .text и получили HTML. Но у этого объекта есть ещё много интересных методов, например:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">response</span><span class="o">.</span><span class="n">status_code</span>  <span class="c1"># вернёт статус-код ответа</span>
+<span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span>  <span class="c1"># метод для проверки успешности запроса</span>
+<span class="n">response</span><span class="o">.</span><span class="n">encoding</span>  <span class="c1"># кодировка</span>
+<span class="n">response</span><span class="o">.</span><span class="n">url</span>  <span class="c1"># адрес URL</span>
+</code></pre></div>
+
+<p>Когда мы хотим работать в коде со структурированными данными, нам не подходит формат HTML. Есть несколько популярных форматов для передачи данных по сети, мы рассмотрим формат JSON. </p>
+<h2 id="json">Формат JSON</h2>
+<p>Формат JSON похож на обычный словарь в Питоне. Есть ключ и значение, есть вложенность. Разница в том, что JSON более стандартизирован и строг, например в нём можно использовать только двойные кавычки. Подробнее здесь: <a href="https://www.json.org/json-ru.html">https://www.json.org/json-ru.html</a> </p>
+<p>Например, вот так выглядит запрос к сервису API <a href="https://superheroapi.com/index.html">https://superheroapi.com</a> по запросу Batman:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;response&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;results-for&quot;</span><span class="p">:</span> <span class="s2">&quot;batman&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;69&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Batman&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;powerstats&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;intelligence&quot;</span><span class="p">:</span> <span class="s2">&quot;81&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;strength&quot;</span><span class="p">:</span> <span class="s2">&quot;40&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;speed&quot;</span><span class="p">:</span> <span class="s2">&quot;29&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;durability&quot;</span><span class="p">:</span> <span class="s2">&quot;55&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;power&quot;</span><span class="p">:</span> <span class="s2">&quot;63&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;combat&quot;</span><span class="p">:</span> <span class="s2">&quot;90&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;biography&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;full-name&quot;</span><span class="p">:</span> <span class="s2">&quot;Terry McGinnis&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;alter-egos&quot;</span><span class="p">:</span> <span class="s2">&quot;No alter egos found.&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;Batman II&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;The Tomorrow Knight&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;The second Dark Knight&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;The Dark Knight of Tomorrow&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Batman Beyond&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;place-of-birth&quot;</span><span class="p">:</span> <span class="s2">&quot;Gotham City, 25th Century&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;first-appearance&quot;</span><span class="p">:</span> <span class="s2">&quot;Batman Beyond #1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;publisher&quot;</span><span class="p">:</span> <span class="s2">&quot;DC Comics&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;good&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;appearance&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;gender&quot;</span><span class="p">:</span> <span class="s2">&quot;Male&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;race&quot;</span><span class="p">:</span> <span class="s2">&quot;Human&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;5&#39;10&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;178 cm&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;weight&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;170 lb&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;77 kg&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;eye-color&quot;</span><span class="p">:</span> <span class="s2">&quot;Blue&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;hair-color&quot;</span><span class="p">:</span> <span class="s2">&quot;Black&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;work&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;occupation&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;base&quot;</span><span class="p">:</span> <span class="s2">&quot;21st Century Gotham City&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;connections&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;group-affiliation&quot;</span><span class="p">:</span> <span class="s2">&quot;Batman Family, Justice League Unlimited&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;relatives&quot;</span><span class="p">:</span> <span class="s2">&quot;Bruce Wayne (biological father), Warren McGinnis (father, deceased), Mary McGinnis (mother), Matt McGinnis (brother)&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.superherodb.com/pictures2/portraits/10/100/10441.jpg&quot;</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;70&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Batman&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;powerstats&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;intelligence&quot;</span><span class="p">:</span> <span class="s2">&quot;100&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;strength&quot;</span><span class="p">:</span> <span class="s2">&quot;26&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;speed&quot;</span><span class="p">:</span> <span class="s2">&quot;27&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;durability&quot;</span><span class="p">:</span> <span class="s2">&quot;50&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;power&quot;</span><span class="p">:</span> <span class="s2">&quot;47&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;combat&quot;</span><span class="p">:</span> <span class="s2">&quot;100&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;biography&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;full-name&quot;</span><span class="p">:</span> <span class="s2">&quot;Bruce Wayne&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;alter-egos&quot;</span><span class="p">:</span> <span class="s2">&quot;No alter egos found.&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;Insider&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Matches Malone&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;place-of-birth&quot;</span><span class="p">:</span> <span class="s2">&quot;Crest Hill, Bristol Township; Gotham County&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;first-appearance&quot;</span><span class="p">:</span> <span class="s2">&quot;Detective Comics #27&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;publisher&quot;</span><span class="p">:</span> <span class="s2">&quot;DC Comics&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;good&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;appearance&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;gender&quot;</span><span class="p">:</span> <span class="s2">&quot;Male&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;race&quot;</span><span class="p">:</span> <span class="s2">&quot;Human&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;6&#39;2&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;188 cm&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;weight&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;210 lb&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;95 kg&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;eye-color&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;hair-color&quot;</span><span class="p">:</span> <span class="s2">&quot;black&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;work&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;occupation&quot;</span><span class="p">:</span> <span class="s2">&quot;Businessman&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;base&quot;</span><span class="p">:</span> <span class="s2">&quot;Batcave, Stately Wayne Manor, Gotham City; Hall of Justice, Justice League Watchtower&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;connections&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;group-affiliation&quot;</span><span class="p">:</span> <span class="s2">&quot;Batman Family, Batman Incorporated, Justice League, Outsiders, Wayne Enterprises, Club of Heroes, formerly White Lantern Corps, Sinestro Corps&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;relatives&quot;</span><span class="p">:</span> <span class="s2">&quot;Damian Wayne (son), Dick Grayson (adopted son), Tim Drake (adopted son), Jason Todd (adopted son), Cassandra Cain (adopted ward)\nMartha Wayne (mother, deceased), Thomas Wayne (father, deceased), Alfred Pennyworth (former guardian), Roderick Kane (grandfather, deceased), Elizabeth Kane (grandmother, deceased), Nathan Kane (uncle, deceased), Simon Hurt (ancestor), Wayne Family&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.superherodb.com/pictures2/portraits/10/100/639.jpg&quot;</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;71&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Batman II&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;powerstats&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;intelligence&quot;</span><span class="p">:</span> <span class="s2">&quot;88&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;strength&quot;</span><span class="p">:</span> <span class="s2">&quot;11&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;speed&quot;</span><span class="p">:</span> <span class="s2">&quot;33&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;durability&quot;</span><span class="p">:</span> <span class="s2">&quot;28&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;power&quot;</span><span class="p">:</span> <span class="s2">&quot;36&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;combat&quot;</span><span class="p">:</span> <span class="s2">&quot;100&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;biography&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;full-name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dick Grayson&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;alter-egos&quot;</span><span class="p">:</span> <span class="s2">&quot;Nightwing, Robin&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;Dick Grayson&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;place-of-birth&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;first-appearance&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;publisher&quot;</span><span class="p">:</span> <span class="s2">&quot;Nightwing&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;good&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;appearance&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;gender&quot;</span><span class="p">:</span> <span class="s2">&quot;Male&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;race&quot;</span><span class="p">:</span> <span class="s2">&quot;Human&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;5&#39;10&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;178 cm&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;weight&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;175 lb&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;79 kg&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;eye-color&quot;</span><span class="p">:</span> <span class="s2">&quot;Blue&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;hair-color&quot;</span><span class="p">:</span> <span class="s2">&quot;Black&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;work&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;occupation&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;base&quot;</span><span class="p">:</span> <span class="s2">&quot;Gotham City; formerly Bludhaven, New York City&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;connections&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;group-affiliation&quot;</span><span class="p">:</span> <span class="s2">&quot;Justice League Of America, Batman Family&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;relatives&quot;</span><span class="p">:</span> <span class="s2">&quot;John Grayson (father, deceased), Mary Grayson (mother, deceased), Bruce Wayne / Batman (adoptive father), Damian Wayne / Robin (foster brother), Jason Todd / Red Hood (adoptive brother), Tim Drake / Red Robin (adoptive brother), Cassandra Cain / Batgirl IV (adoptive sister)&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.superherodb.com/pictures2/portraits/10/100/1496.jpg&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Мы сделали запрос и получили данные по Бэтмену. Теперь мы можем работать с ними в коде, как с обычным словарём. Для этого в Питоне есть встроенная библиотека <code>json</code>.</p>
+<h2 id="http-">Подробнее про HTTP-запросы</h2>
+<p>Есть открытые API, которые не требуют аутентификации, например <a href="https://swapi.dev/documentation">https://swapi.dev/documentation</a> API по Звёздным войнам. Попробуй почитать документацию и разобраться, как выполнять запросы и получать данные.</p>
+<p>Например, если почитать документацию, то можно узнать, что параметр search позволяет искать персонажа: <a href="https://swapi.dev/api/people/?search=r2">https://swapi.dev/api/people/?search=r2</a></p>
+<p>Давай изучим более подробно этот запрос:</p>
+<div class="codehilite"><pre><span></span><code><span class="err">HTTP 200 OK</span>
+<span class="nt">Content-Type:</span><span class="w"> </span><span class="nl">application</span><span class="dl">/</span><span class="nl">json</span><span class="w"></span>
+<span class="c">Allow: GET, HEAD, OPTIONS</span>
+</code></pre></div>
+
+<p>Перед тобой HTTP-заголовок, он есть в каждом запросе. Запрос состоит из заголовков и тела. Тело иногда может быть пустым. </p>
+<p>Первая строка — это код ответа, 200 означает, что запрос прошел успешно. Это самый популярный код ответа. Наверняка ты знаешь про другой популярный код ответа: 404, который означает "Ресурс не найден". Обычно он приходит, когда мы ошиблись в вводе URL. Полный список можно посмотреть, например, здесь: <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2_%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8F_HTTP">https://ru.wikipedia.org/wiki/Список_кодов_состояния_HTTP</a> </p>
+<p>Далее идёт Content-Type, это тип данных, который пришёл к ответ на запрос. К примере выше тип был <code>text/html</code>, здесь же он уже отличается. Потому что данные пришли в формате JSON.</p>
+<p>На третьей строке разрешенные методы. Про методы можно почитать здесь: <a href="https://ru.wikipedia.org/wiki/HTTP#%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B">https://ru.wikipedia.org/wiki/HTTP#Методы</a> </p>
+<p>Обычно мы применяем метод GET, когда хотим запросить какие-то данные, POST когда хотим передать какие-то данные. И так далее. </p>
+<h2 id="api-twilio">Пример работы с API: Twilio</h2>
+<p>На этот раз запросы будут происходить не напрямую к API, как мы это делали выше, а через специальную библиотеку-обертку. Многие сервисы их предоставляют и это очень удобно. </p>
+<p>Зарегистрируйся на <a href="https://www.twilio.com/">https://www.twilio.com</a>, там нужно будет подтвердить свой email и номер телефона, это несложно. </p>
+<p>Зайди в <a href="https://www.twilio.com/console">https://www.twilio.com/console</a> и найди "Get my first Twilio phone number", чтобы получить номер, с которого будет уходить sms-сообщения. Это будет выглядеть как-то так:</p>
+<p><img alt="" src="/img/twilio_api.png" /></p>
+<p>Соглашайся.</p>
+<p>Пробный бесплатный период позволяет отправлять смс-ки только на свои подтвержденные номера, поэтому убедись, что здесь есть номер, на который ты хочешь отправлять собщения: <a href="https://www.twilio.com/console/phone-numbers/verified">https://www.twilio.com/console/phone-numbers/verified</a> </p>
+<p>Создай файл с именем <code>send_sms.py</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">twilio.rest</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="n">TWILIO_ACCOUNT_SID</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;TWILIO_ACCOUNT_SID&#39;</span><span class="p">)</span>
+<span class="n">TWILIO_AUTH_TOKEN</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;TWILIO_AUTH_TOKEN&#39;</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">TWILIO_ACCOUNT_SID</span><span class="p">,</span> <span class="n">TWILIO_AUTH_TOKEN</span><span class="p">)</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">body</span><span class="o">=</span><span class="s1">&#39;Привет!&#39;</span><span class="p">,</span>  <span class="c1"># текст сообщения</span>
+    <span class="n">from_</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>  <span class="c1"># номер, который был получен</span>
+    <span class="n">to</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>  <span class="c1"># твой номер, на который придёт sms</span>
+    <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">sid</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Затем в этой же директории создай файл <code>.env</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">TWILIO_ACCOUNT_SID</span><span class="o">=</span>
+<span class="n">TWILIO_AUTH_TOKEN</span><span class="o">=</span>
+</code></pre></div>
+
+<p>После знака "=" скопируй SID и AUTH_TOKEN из <a href="https://www.twilio.com/console">https://www.twilio.com/console</a>.</p>
+<p>Токен — это аналог пароля, уникальная комбинация символов, которая дает тебе доступ к API. Это похоже на пропуск, тебе нужно каждый раз посылать токен с каждый запросом.</p>
+<p>Зачем нужен файл <code>.env</code>? В нём мы обычно храним секретные данные, в данном случае это наш номер аккаунта и токен для доступа. Если кто-то их узнает, то он сможет отправлять сообщения от твоего имени, это всё равно что отдать свой пароль. А ещё наш код будет храниться в репозитории, поэтому в нём никогда не должно быть секретных данных. Метод <code>.getenv</code> из модуля os достает эти данные из файла .env, или из переменных окружения, если такой файл отсутствует. </p>
+<p>Выполни установку двух необходимых пакетов: </p>
+<div class="codehilite"><pre><span></span><code><span class="n">pip3</span> <span class="n">install</span> <span class="n">twilio</span> <span class="n">python</span><span class="o">-</span><span class="n">dotenv</span>
+</code></pre></div>
+
+<p>Теперь добавь в код необходимые номера телефонов (там комментариями прописано) и можешь запускать! </p>
+<h2 id="_1">Обработка исключений</h2>
+<p>Часто бывает так, что мы ждём какую-то внештатную ситуацию и знаем, как на неё реагировать. Например, мы делаем запрос к сервису API, а то вдруг оказался недоступным, программа упадёт с ошибкой. Или мы запрашиваем список юзернеймов всех студентов из чатика python101, а у пары студентов отсутствует юзернейм. Программа упадёт с ошибкой. И так далее. </p>
+<p>В случае, когда мы хотим перестраховаться или знаем, что что-то может пойти не так, мы должны использовать обработку исключений: <a href="https://docs.python.org/3/tutorial/errors.html">https://docs.python.org/3/tutorial/errors.html</a></p>
+<p>Если проще, то это просто конструкция вида:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+   <span class="n">hpmor_book</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;hpmor.txt&#39;</span><span class="p">)</span>  <span class="c1"># какой-то код</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+   <span class="c1"># код-который-выполнится-если-такого-файла-нет</span>
+<span class="k">finally</span><span class="p">:</span>  <span class="c1"># необязательный блок</span>
+   <span class="c1"># код-который-выполнится-в-любом-случае</span>
+</code></pre></div>
+
+<p>Мы ожидаем, что такого файла может не существовать и можем заранее прописать, как на это реагировать. В случае со студентами в Телеграме, можно, например, прописывать <code>-пусто-</code> или что-то ещё. </p>
+<p>Исключения полезны при работе с API, потому что позволяют проверить, успешно ли отработал запрос. В случае, если нет, <code>response.raise_for_status</code> выкинет исключение <code>requests.exceptions.HTTPError</code>, которое можно как-то обработать. </p>
+<h2 id="_2">Логирование</h2>
+<p>У тех, на кого ругался строгий линтер WSP, возникал вопрос "А почему он запрещает мне использовать функцию <code>print()</code>?!" </p>
+<p>Причина кроется в том, что обычно программы запущены на сервере и доступ к стандартному выводу не всегда имеется. Ну и сама концепция использования принтов для отладки считается плохим тоном. Есть крутая альтернатива: логи. </p>
+<p>Логи — это те же самые сообщения через print(), только они могут иметь уровень важности (один из пяти), метку времени (в какое время произошло событие) и ещё много чего полезного. Например, логи можно записывать в файл, чтобы потом посмотреть. </p>
+<p>Документация доступна по адресу: <a href="https://docs.python.org/3/library/logging.html">https://docs.python.org/3/library/logging.html</a></p>
+<p>Для того, чтобы использовать логи, нужно импортировать модуль <code>logging</code>.</p>
+<p>Как уже было сказано выше, существует пять уровней логирования, по степени важности:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Сообщение для отладки&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Уровень <code>DEBUG</code> это самый не важный уровень, им пользуются сами разработчики для того, чтобы вывести какую-то отладочную информацию, которая ни на что не влияет.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Друг появился online&#39;</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;SMS отправлено&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p><code>INFO</code> — чуть более значимый уровень логирования, оповещает пользователя о каких-то событиях. Когда программа запущена, это позволяет получать информацию о том, что происходит. </p>
+<p><code>WARNING</code> — какое-то предупреждение, на которое стоит обратить внимание. </p>
+<div class="codehilite"><pre><span></span><code><span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Не найден settings.json, использована заглушка&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p><code>ERROR</code> — это уже серьезная ошибка, из-за которой программа не может нормально работать. </p>
+<div class="codehilite"><pre><span></span><code><span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Ошибка, сообщение не было отправлено&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p><code>CRITICAL</code> — самый серьезный уровень, когда всё очень плохо и нужно срочно всё чинить! </p>
+<div class="codehilite"><pre><span></span><code><span class="n">logging</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s1">&#39;МЫ ВСЁ УРОНИЛИ!!!11&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Логи можно настраивать под свои нужды, например: <a href="https://docs.python.org/3/library/logging.html#logrecord-attributes">https://docs.python.org/3/library/logging.html#logrecord-attributes</a> </p>
+<p>Тут нужно использовать %-форматирование или метод <code>.format</code>, можно разобраться по примерам:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(levelname)s</span><span class="s2"> </span><span class="si">%(asctime)s</span><span class="s2"> </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Добавляем эту строчку и теперь логи будут выводиться примерно так:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">INFO</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">09</span> <span class="mi">02</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">51</span><span class="p">,</span><span class="mi">102</span> <span class="n">Сообщение</span> <span class="n">отправлено</span><span class="o">.</span>
+</code></pre></div>
+
+<p>Можно настроить логи как угодно — чтобы выводилось имя файла, имя функции, в которой сработало и так далее. Можно записывать лог в файл и даже создавать свои собственные логгеры. Всё что для этого нужно — почитать документацию (ссылка была выше).</p>
+<h2 id="_3">Что дальше?</h2>
+<p>Первое знакомство с API закончилось. Пройдемся ещё раз по основным тезисам.</p>
+<p>API это интерфейс для программного взаимодействия с каким-то сервисом.</p>
+<p>REST API — один из принципов построения API, стандарт, по которому общаются разные сервисы в интернете. Он работает поверх HTTP, используя HTTP-методы для общения. </p>
+<p>HTTP-методы выступают в роли глаголов, URL выступают в роли существительных, параметры выполняют вспомогательную роль. Например, мы делаем запрос GET <a href="https://swapi.dev/api/people/?search=r2">https://swapi.dev/api/people/?search=r2</a> — тут у нас GET (англ. "получить") глагол, people (англ. "люди"), и search ("поиск") по R2 — начальные символы робота R2D2. Запрос отработает и вернет нам информацию о роботе R2D2 из Вселенной StarWars. </p>
+<p>Запросы можно делать как напрямую к API через библиотеку requests, так и используя (если они есть) библиотеки, которые делают это за тебя. </p>
+<p>Также стоит упомянуть о бесплатной удобной программке Postman, которая позволяет совершать запросы к API: <a href="https://www.postman.com/product/api-client/">https://www.postman.com/product/api-client/</a> </p>
+<h2 id="_4">Практика</h2>
+<h3 id="_5">Подготовка</h3>
+<p>Скачай Postman и научись с его помощью делать запросы к сервису <a href="https://swapi.dev/documentation">https://swapi.dev/documentation</a>. Исследуй людей и планеты. </p>
+<p>Сделай то же самое с помощью библиотеки requests. Изучи документацию: <a href="https://requests.readthedocs.io/en/latest/user/quickstart/">https://requests.readthedocs.io/en/latest/user/quickstart/</a> </p>
+<p>Отправь себе SMS с помощью сервиса Twilio с произвольным текстом.</p>
+<p>Гугли все незнакомые слова и термины, задавай вопросы в чат. </p>
+<h3 id="1">Задание 1</h3>
+<p>Напиши скрипт для мониторинга доступности произвольного сервиса. В случае, если сервис становится недоступен, скрипт отправляет SMS-сообщение на твой номер. Сервисом может быть любой сайт или сервер (даже наш учебный). Опрашивай сервис каждые 60 секунд. </p>
+<p>Позаботься о том, чтобы не хранить в репозитории личные данные. </p>
+<p>Настрой хорошее логирование и записывай логи в файл. </p>
+<p>Попробуем формат peer-review: выполняешь задание, грамотно оформляешь в публичном репозитории (лучше перечитай материал из второй недели) и скидываешь ссылку в чат. </p>
+<p>Каждый сможет поревьюить чужие работы — либо написать замечания в чате, либо кинуть Pull Request с исправлениями, которые можно принять. </p>
+<h3 id="2">Задание 2 (необязательное)</h3>
+<p>У ВКонтакте очень плохой API, но тем не менее. :)</p>
+<p>Напиши программку, которая мониторит онлайн-статус друга и посылает тебе SMS, когда друг появляется онлайн. Запросы к ВК API можно делать напрямую, а можно найти специальную библиотеку, как это было в случае с Twilio. На твой выбор. </p>
+<p>Что потребуется: </p>
+<p>Зарегаться в ВК (если ещё нет)</p>
+<p>Добавить в друзья человека, который частенько бывает онлайн</p>
+<p>Получить токен: <a href="https://vk.com/dev/">https://vk.com/dev/</a></p>
+<p>Найти нужный метод для получения статуса: <a href="https://vk.com/dev/methods">https://vk.com/dev/methods</a></p>
+<p>Написать пару функций для мониторинга и отправки SMS-сообщения</p>
+<p>Логирование, обработка исключений, правильно оформленный репозиторий — вот это всё.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../week3/if_for/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Назад
+                </span>
+                Ветвления и итерации
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../wtf/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Вперед
+                </span>
+                Что здесь происходит?
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            copyleft &copy; copyright
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

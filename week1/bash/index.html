@@ -1,0 +1,1170 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.4">
+    
+    
+      
+        <title>Линукс и Баш - python 101 course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.358818c7.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f0267088.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="indigo">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="python 101 course" class="md-header-nav__button md-logo" aria-label="python 101 course">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            python 101 course
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Линукс и Баш
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Первая неделя
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../week2/github/" class="md-tabs__link">
+          Вторая неделя
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../week3/vscode/" class="md-tabs__link">
+          Третья неделя
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../week4/api/" class="md-tabs__link">
+          Четвертая неделя
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="python 101 course" class="md-nav__button md-logo" aria-label="python 101 course">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    python 101 course
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Первая неделя
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Первая неделя" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Первая неделя
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Линукс и Баш
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Линукс и Баш
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unix" class="md-nav__link">
+    UNIX и Линукс, краткая история
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Подключение к удаленному серверу
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Командный интерфейс
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Запуск Баша в терминале
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Перемещение по директориям
+  </a>
+  
+    <nav class="md-nav" aria-label="Перемещение по директориям">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Ключи
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Типы файлов и права доступа
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    Манипуляции с директориями и файлами
+  </a>
+  
+    <nav class="md-nav" aria-label="Манипуляции с директориями и файлами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    Создать, удалить, скопировать, переместить
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    Вывести на экран
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    Комбинирование команд
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    Поиск по шаблону
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    Перенаправление ввода-вывода
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    Пайпы
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    Консольные редакторы текста
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    Полезности.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    Дальнейшее изучение
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    Практика
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    Задание 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    Задание 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    Задание 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    Задание 4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    Задание 5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    Задание 6
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git/" class="md-nav__link">
+      Гит и Гитхаб
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Вторая неделя
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Вторая неделя" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Вторая неделя
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week2/github/" class="md-nav__link">
+      GitHub Flow и ветки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week2/bash-scripting/" class="md-nav__link">
+      Bash-скриптинг
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Третья неделя
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Третья неделя" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Третья неделя
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week3/vscode/" class="md-nav__link">
+      Настройка окружения
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week3/python_intro/" class="md-nav__link">
+      Основы Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week3/if_for/" class="md-nav__link">
+      Ветвления и итерации
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Четвертая неделя
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Четвертая неделя" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Четвертая неделя
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week4/api/" class="md-nav__link">
+      Интерфейсы и API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../wtf/" class="md-nav__link">
+      Что здесь происходит?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../done/" class="md-nav__link">
+      Что значит «сделать»
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unix" class="md-nav__link">
+    UNIX и Линукс, краткая история
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Подключение к удаленному серверу
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Командный интерфейс
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Запуск Баша в терминале
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Перемещение по директориям
+  </a>
+  
+    <nav class="md-nav" aria-label="Перемещение по директориям">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Ключи
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Типы файлов и права доступа
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    Манипуляции с директориями и файлами
+  </a>
+  
+    <nav class="md-nav" aria-label="Манипуляции с директориями и файлами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    Создать, удалить, скопировать, переместить
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    Вывести на экран
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    Комбинирование команд
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    Поиск по шаблону
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    Перенаправление ввода-вывода
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    Пайпы
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    Консольные редакторы текста
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    Полезности.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    Дальнейшее изучение
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    Практика
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    Задание 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    Задание 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    Задание 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    Задание 4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    Задание 5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    Задание 6
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1"></h1>
+<h2 id="unix">UNIX и Линукс, краткая история</h2>
+<p>Перед тем, как начать писать программы на Питоне, нужно потратить пару недель на изучение некоторых фундаментальных инструментов. Этим мы и займемся на первом спринте. </p>
+<p>На этой неделе мы познакомимся с операционными системами семейства Unix. Большинство из вас (судя по проведенному опросу, 80%) сидят под Виндой. Так вот, Unix — это не Windows, они отличается как внутренне, так и идеологически. Ниже ты поймешь, почему так. </p>
+<p>В нескольких абзацах про историю создания Unix. Всё началось в Америке, примерно в 1969-1970, когда вот эти ребята...</p>
+<p><img alt="" src="/img/ken_and_dennis.jpg" /></p>
+<p>... <strong>Кен Томпсон</strong> и <strong>Деннис Ритчи</strong>, работавшие в компании Bell Labs, создали операционную систему Unix для нужд компании. Первая версия была написана на ассемблере (это такой очень сложный язык программирования низкого уровня), поэтому стороннему человеку было очень сложно что-либо понять, ребята заморочились и постепенно пришли к тому, что создали высокоуровневый язык программирования С (произносится как "Си") и переписали Unix на Си. Это позволило распространить Юникс среди ведущих университетов Америки, откуда и началось развитие разных ответвлений Unix-систем. Например, есть такой замечательный человек из Амстердама, <strong>Эндрю Таненбаум...</strong></p>
+<p><img alt="" src="/img/andrew.png" /></p>
+<p>...автор нескольких фундаментальных книг и преподаватель университета, он создал свою операционную систему на основе Unix чисто для учебных целей и назвал её Minix. Теперь переносимся в Финляндию, молодой студент Хельсинского университета <strong>Линус Торвальдс</strong>...</p>
+<p><img alt="" src="/img/linus.jpg" /></p>
+<p>...во время своей учебы читает одну из книг Таненбаума «Операционные системы: разработка и реализация» и очень сильно вдохновляется, настолько сильно, что начинает создавать свою собственную операционную систему. К проекту подключается <strong>Ричард Столлман</strong>...</p>
+<p><img alt="" src="/img/richard.jpg" /></p>
+<p>... со своим проектом GNU и появляется свободная операционная система Linux. </p>
+<p>Ближе к двухтысячным компания Apple выпускает операционную систему DARWIN, которая послужила основой для современной MacOS, она была сделана по стандарту POSIX, это такой стандарт, который описывает совместимость unix-подобных операционных систем. Благодаря ему обеспечивается совместимость между всеми unix-подобными операционными системами. </p>
+<p>Что из этого всего надо вынести? <strong>Начало эпохи UNIX</strong> приходится на 1 января 1970 года. Запомни этот момент, он пригодится в будущем. </p>
+<p>Зачем нам всё это нужно? А затем, что на Unix-подобных операционных системах (в основном, на Линуксе) работает подавляющее большинство серверов, и тебе, как разработчику, придется постоянно иметь с этим дело. </p>
+<p>Заниматься разработкой следует на UNIX-подобных системах, таких как Linux, MacOS или FreeBSD. Использовать операционную систему Windows рекомендуется только тогда, когда пишешь под винду на C#. </p>
+<p>Мы не будем писать под Винду, поэтому в курсе по умолчанию будет Линукс, но всё применимо и для MacOS. Если у тебя Винда, и ты пока не хочешь ничего с этим делать (вполне разумный подход), то ниже есть абзац про то, как с этим жить. </p>
+<h2 id="_2">Подключение к удаленному серверу</h2>
+<p>Это будет наше первое знакомство с географически удаленным сервером, он один для всех студентов и уже настроенный. Забегая вперед: на втором месяце обучения ты создашь свой собственный сервер и научишься его администрировать. </p>
+<p>Сразу после подключения тебе нужно изменить дефолтный пароль, это требование безопасности. На самом деле вход по паролю небезопасный, нужно ходить на сервер по ssh-ключу, но мы научимся этому через три недели, когда будем создавать свой сервер. Пока по паролю. И не забудь его сменить, потому что он <strong>сгорит через три дня и ты не сможешь зайти на сервер и выполнить задание.</strong> </p>
+<p>Это практический урок: выполняй все, о чем читаешь, самостоятельно. Экспериментируй. </p>
+<h2 id="_3">Командный интерфейс</h2>
+<p>Разработка программ — сложный процесс, он включает в себя не только написание кода. Написанный код нужно как-то запускать, где-то хранить. Первое, с чем ты сталкиваешься, когда начинаешь программировать, и то, к чему нужно привыкать сразу — это командная строка. Командная строка — это интерфейс взаимодействия с операционной системой и другими программами. Обычно он выглядит как черное окошко с белыми буквами:</p>
+<p><img alt="" src="/img/emtpy_bash.png" /></p>
+<p>Тебе хорошо знаком другой интерфейс взаимодействия — графический. В данный момент он у тебя перед глазами. Этот способ взаимодействия идеально подходит для рядовых пользователей — тут есть привычные окошки, которые можно перемещать по экрану или сворачивать, файлы и папки в виде картинок, всё это делает выполнение пользовательских задач интуитивно простым. </p>
+<p>Командный интерфейс взаимодействия работает иначе. В командном интерфейсе ты печатаешь команду, нажимаешь Enter, система выполняет эту команду, пишет на экран результат выполнения и ждёт следующей команды.  Это называется REPL (<strong>R</strong>ead <strong>E</strong>val <strong>P</strong>rint <strong>L</strong>oop, англ. "Цикл Прочитать, Выполнить, Распечатать"). </p>
+<p><a href="https://asciinema.org/a/3y4XQ3RR8GD9u1Cj4W0QGPUdX"><img alt="asciicast" src="https://asciinema.org/a/3y4XQ3RR8GD9u1Cj4W0QGPUdX.svg" /></a></p>
+<p>Предположим, ты хочешь удалить файл <em>diplom.txt</em> из привычного графического интерфейса. Ты переходишь в ту папку, где он находится, наводишь на него курсор и перетаскиваешь свой <em>diplom.txt</em> мышкой на значок корзины, после чего опустошаешь корзину. Чтобы сделать то же самое в командном интерфейсе, тебе достаточно лишь набрать <code>rm diplom.txt</code> (rm — это команда для удаления файла, от слова <strong>r</strong>e<strong>m</strong>ove) и нажать Enter.</p>
+<p>Сначала может показаться, что взаимодействовать с системой таким способом ужасно неудобно, но это только на первый взгляд. На самом деле всё наоборот. Основные преимущества командного интерфейса перед графическим:</p>
+<ul>
+<li>Скорость работы возрастает на порядок.</li>
+<li>Набор команд можно записывать в файлы, то есть писать скрипты (сценарии) и потом запускать. Это позволяет решать сложные задачи, которые в графическом интерфейсе не получится решить в принципе. А также автоматизировать какие-то действия.</li>
+<li>Ты лучше понимаешь все происходящие в системе процессы и можешь их контролировать, потому что работаешь с системой напрямую, а не через "прослойку" в виде графической оболочки. Это открывает практически неограниченные возможности в работе, которые недоступны в графическом интерфейсе.</li>
+<li>Возможность подключаться к компьютеру, который расположен где-то очень далеко и выполнять на нём команды. То есть работать с удалённым сервером. На удалённых серверах не бывает графического интерфейса и взаимодействовать с другими компьютерами можно только посредством команд.</li>
+</ul>
+<p>Командный интерфейс состоит из командной оболочки и терминала, терминал запускает командную оболочку в графической среде.</p>
+<p><strong>Командная оболочка</strong> (shell) — это программа, передающая твои команды на выполнение системе, тот самый REPL, про который было написано выше. Самая популярная командная оболочка — <strong>bash</strong>, она используется по умолчанию в таких операционных системах, как Linux и MacOS. Существует множество других командных оболочек (например, в операционной системе Windows используется какая-то своя, а на FreeBSD используется tcsh), но именно bash можно назвать стандартом из-за доминирования Линукса на серверах.</p>
+<p>Для запуска командной оболочки внутри графического интерфейса потребуется <strong>терминал</strong> — это то самое окошко, внутри которого будет запущен Баш. Терминалов тоже бывает много и они отличаются всякими дополнительными возможностями — можно изменять шрифт, создавать вкладки и прочее. </p>
+<p>Итак, у нас есть Терминал — это программа, которая запускает командную оболочку (обычно Баш) в графическом интерфейсе твоей системы. Если у системы нет графического интерфейса, то и в терминале нужды нет. Для простоты далее в курсе мы будем пользоваться термином Баш, подразумевая под этим окно терминала с запущенным Башем. Он позволяет взаимодействовать с операционной системой с помощью команд. Такой метод взаимодействия очень эффективный и иногда единственно возможный. Команды можно группировать в сценарии, скрипты. </p>
+<p>Наверное, тебе уже не терпится выполнить свои первые команды? Давай приступим к практике.</p>
+<h2 id="_4">Запуск Баша в терминале</h2>
+<p>Если у тебя Мак или на твоем компьютере установлена операционная система Линукс, то просто запусти программу Терминал (Terminal), она так и называется. Перед тобой появится Баш.</p>
+<p>Если Винда, то стандартный вариант для всех — поставить <a href="https://gitforwindows.org">Git Bash</a>. Это эмулятор Баша. Разберешься с установкой? Если нет, пиши в чат. </p>
+<p>Если у тебя Windows 10 и ты знаешь толк в извращениях, то можешь интегрировать Linux в свою Винду из Microsoft Store. Держи инструкцию: <a href="https://docs.microsoft.com/ru-ru/windows/wsl/install-win10">https://docs.microsoft.com/ru-ru/windows/wsl/install-win10</a> </p>
+<p>В любом случае, после выполнения вышеперечисленных действий перед твоими глазами должен быть либо полноценный Баш, либо его эмулятор. Напечатай команду <code>whoami</code>и нажми Enter. На экране появится твое имя пользователя. Чтобы завершить работу напечатай команду <code>exit</code> или просто закрой терминал.</p>
+<p>Теперь можно переходить к следующей теме. Если у тебя не получилось выполнить команду <code>whoami</code>, то вернись назад и попробуй понять, что ты сделал не так. Если не помогло, то <strong>пиши в чат</strong>.</p>
+<h2 id="_5">Перемещение по директориям</h2>
+<p>Вспомни, как открывать и закрывать терминал. </p>
+<p>Сейчас ты начнешь выполнять первые команды. Очень важно выполнять все команды самостоятельно, а не просто читать текст. Только так можно чему-то научиться. </p>
+<p>Символ <code>$</code> разделяет служебную информацию слева (имя пользователя, текущая директория) и ввод твоих команд справа.</p>
+<p>После запуска графической оболочки ты попадаешь на так называемый Рабочий стол, это точка входа по умолчанию. В командной оболочке ты тоже всегда где-то находишься. Точкой входа для новой сессии является домашняя директория (<em>home directory</em>), и обычно она соответствует текущему имени пользователя, а то место, где ты находишься сейчас — рабочей директорией (<em>working directory</em>). </p>
+<p>Файловая система Unix отличается от файловой системы Windows. Она имеет древовидную структуру, в основе которой лежит корневой каталог — <code>/</code> (этот символ называется <em>слэш)</em>. Домашняя директория, например, лежит на два уровня ниже корневой: <code>/home/username</code></p>
+<p>Где ты находишься? Ты всегда где-то находишься, чтобы это узнать, есть команда <code>pwd</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">pwd</span> 
+<span class="c1"># print working directory — напечатать текущую директорию</span>
+</code></pre></div>
+
+<p>Всё, что идёт после символа решетки (#) игнорируется Башем, мы будем использовать это для комментариев. </p>
+<p>Чтобы перейти в другую директорию, используй комнду <code>cd</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> &lt;путь до директории&gt;
+<span class="c1"># change directory — сменить директорию</span>
+</code></pre></div>
+
+<p>Пути бывают абсолютными и относительными.</p>
+<p>Абсолютный — идёт от корня и является постоянным, например <code>/home/username</code></p>
+<p>Относительный — идёт от той директории, в который ты находишься. Этот путь не постоянный, а зависит от текущий директории. </p>
+<p>Существует короткая запись некоторых наиболее часть используемых директорий:</p>
+<p><code>.</code> ссылка на текущую директорию</p>
+<p><code>..</code> ссылка на родительскую директорию (ту, которая находится на уровень выше). То есть <code>cd ..</code> поднимет тебя на уровень выше по дереву каталогов. Попробуй выполнить эту команду и посмотри что получится. Не забывай смотреть свое местоположение с помощью <code>pwd</code></p>
+<p><code>~</code> (тильда) — ссылка на домашнюю директорию. У каждого пользователя по умолчанию есть домашняя директория. Она находится в <code>/home/&lt;имя пользователя&gt;</code>(на Линуксе) или <code>/Users/&lt;имя пользователя&gt;</code> (на Маке). Тильда ссылается на эту директорию. Чтобы вернуться в домашнюю директорию, просто набери <code>cd ~</code></p>
+<p>Для просмотра содержимого директории используй команду <code>ls</code>:</p>
+<div class="codehilite"><pre><span></span><code>ls
+<span class="c1"># показать содержимое директории</span>
+</code></pre></div>
+
+<p>С помощью команды <code>man</code> ты можешь прочесть о том, что делает каждая команда, передав ей имя команды в качестве аргумента:</p>
+<div class="codehilite"><pre><span></span><code>man ls
+<span class="c1"># получить справку по команде ls</span>
+</code></pre></div>
+
+<h3 id="_6">Ключи</h3>
+<p>У команд бывают необязательные ключи (опции), которые можно активировать через символ дефиса (иногда у ключа есть полная запись, которая передается через двойной дефис). Например:</p>
+<p><code>ls</code> посмотреть, что содержится в текущей директории
+<code>ls -a</code> (<code>—all</code>) ключ <code>-a</code> или <code>—all</code> показать <strong>всё</strong> (ключ назван от англ. all, "всё") содержимое, даже скрытые файлы (скрытые файлы начинаются с символа точки). Скрытые файлы обычно не нужно трогать, поэтому они скрытые
+<code>ls -l</code> подробные данные про каждый файл
+Ключи можно комбинировать, для этого их надо ставить вместе: <code>ls -lah</code> (соответствует вызову <code>ls -l -a -h</code>), попробуй понять, что делает ключ -h.
+<code>ls</code> можно передавать директорию и смотреть что в ней: <code>ls ../somedirectory</code> покажет, что в директории <code>somedirectory</code>, которая находится на уровень выше, для этого не нужно переходить в неё</p>
+<p>Узнай свою текущую директорию <code>pwd</code>. Переместись на директорию выше <code>cd ..</code>, проверь текущее местонахождение <code>pwd</code> и вернись обратно <code>cd &lt;директория&gt;</code>.</p>
+<p>Перемещайся на уровень выше, пока не дойдешь до корневой директории, посмотри что там интересного с помощью команды <code>ls</code>. Если заблудишься, всегда можно вернуться домой с помощью <code>cd ~</code> (вернуться в домашнюю директорию). </p>
+<h3 id="_7">Типы файлов и права доступа</h3>
+<p>В системах Unix всё есть файл и можно выделить 6 типов. В данный момент не нужно над этим заморачиваться, рассмотрим только два типа — файл и директория. </p>
+<p>У каждого файла и каталога есть владелец и права доступа. Набери команду <code>ls-l</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="err">drwxrwxr-x 2 alex alex 4096 Oct  1 23:40 testdir</span>
+<span class="err">-rw-rw-r-- 1 alex alex    0 Oct  1 23:40 testfile</span>
+</code></pre></div>
+
+<p>Здесь нас интересуют первые десять символов, которые есть у любого файла или директории: <code>-rw-rw-r--</code> Первый символ указывает на тип файла: <code>d</code> — это <strong>d</strong>irectory, директория. <code>-</code> (дефис) это просто файл. Далее идут девять символов, первая тройка который определяет права доступа для владельца файла, вторая тройка для группы владельца и третья для всех остальных. Владелец файла из примера выше у нас <strong>alex</strong>, его группа так же alex. Владелец файла — это обычно тот, кто файл создал. Так же домашняя директория и все что в ней входит во владение текущего пользователя. </p>
+<p>r означает <strong>r</strong>ead (чтение), w это <strong>w</strong>rite (запись), а x — e<strong>x</strong>ecute (выполнение). То есть, пользователь alex может открывать и изменять файл testfile, но не может его запускать. Все остальные пользователи могут только открывать, но не могут изменять. </p>
+<p>Изменить права доступа можно командой <code>chmod</code>:</p>
+<div class="codehilite"><pre><span></span><code>chmod <span class="nv">u</span><span class="o">=</span>rwx,g<span class="o">=</span>rw,o<span class="o">=</span>rx file.txt
+</code></pre></div>
+
+<p>u — значит user (владелец), g — group, o — others (все остальные). r, w, x это чтение, запись и исполнение. Просто перечисляем, для кого мы даем какие права. Например, себе как владельцу максимальные права, а всем остальным ограниченные.</p>
+<h2 id="_8">Манипуляции с директориями и файлами</h2>
+<p>Окей, перемещаться по директориям научились, давай посмотрим, как выполнять над директориями какие-либо действия. Большинство команд работает и для файлов.</p>
+<h3 id="_9">Создать, удалить, скопировать, переместить</h3>
+<p><code>mkdir</code> cоздать директорию, можно передавать несколько параметров. Например, команда <code>mkdir one two three</code>создаст сразу три директории с именами <em>one</em>, <em>two</em> и <em>three</em></p>
+<p>Команда <code>touch &lt;имя файла&gt;</code> создает файл. Если применить к существующему файлу, то обновится его время последнего изменения</p>
+<p><code>rm</code> удалить <strong>пустую</strong> директорию или файл. Чтобы удалить непустую директорию, добавь ключ -r (<strong>r</strong>екурсивно)</p>
+<p><code>cp file1 myfolder/file2</code> сделать копию файла <code>file1</code>и поместить в директорию <code>myfolder</code> под именем <code>file2</code></p>
+<p><code>mv</code> переместить, работает так же, как и предыдущая команда, только вместо копии выполняет перенос файла. Если "перенести" файл в текущую директорию с новым именем, то файл просто переименуется: <code>mv old_filename new_filename</code></p>
+<h3 id="_10">Вывести на экран</h3>
+<p><code>cat</code> —  весь файл, <code>head</code> — верхняя часть, <code>tail</code> — нижняя часть</p>
+<p><code>cat file.txt</code> — вывести содержимое файла <code>file.txt</code></p>
+<p><code>head -n 3</code> — вывести верхний кусочек файла (первые три строчки)</p>
+<p><code>head -c 10</code> — вывести первые 10 символов файла</p>
+<p><code>tail -n 3</code> — вывести конец файла (последние 3 строчки)</p>
+<p><code>tail -c 10</code> — вывести последние 10 символов</p>
+<p><code>echo &lt;text&gt;</code> — просто выводит на экран текст, который ты передаешь в качестве аргумента</p>
+<h3 id="_11">Комбинирование команд</h3>
+<p>Команды можно комбинировать и записывать в одну строку. </p>
+<p><code>;</code> — независимо от результата предыдущей команды выполнить следующую</p>
+<p><code>&amp;&amp;</code> — то же самое, но с условием успешного выполнения предыдущей команды</p>
+<p>Примеры: </p>
+<p><code>mkdir myfolder &amp;&amp; cd myfolder</code> команда создаст директорию myfolder и перейдёт в неё. Если директория уже существует, то ничего не будет выполнено</p>
+<p><code>mkdir myfolder; cd myfolder</code> команда создаст директорию myfolder и перейдёт в неё. Если директория уже существует, то просто перейдет в неё</p>
+<h3 id="_12">Поиск по шаблону</h3>
+<p><code>grep</code> — это поиск по шаблону</p>
+<p><code>grep 42 file</code> (найти упоминания числа 42 в файле <code>file</code>)</p>
+<p><code>grep 42 file -с</code> (вывести количество упоминаний "42" в файле <code>file</code>)</p>
+<p><code>grep -i привет file</code> (ignore case) будет искать привет в файле <code>file</code> без учета регистра ("привет", "Привет", "ПРИВЕТ", "пРиВеТ" и так далее)</p>
+<h3 id="-">Перенаправление ввода-вывода</h3>
+<p>Символами стрелочек можно перенаправлять результат выполнения команды в файл:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">echo</span> Hi &gt; greetings
+<span class="c1"># перенаправит Hi в файл greetings</span>
+<span class="c1"># если файла не существует, то он создастся</span>
+<span class="c1"># если файл существует, то он полностью перезапишется</span>
+
+date &gt; current_datetime
+<span class="c1"># перенаправит текущую дату и время в файл current_datetime</span>
+<span class="c1"># если файла не существует, то он создастся</span>
+<span class="c1"># если файл существует, то он полностью перезапишется</span>
+
+<span class="nb">echo</span> Hi &gt;&gt; greetings
+date &gt;&gt; current_datetime
+<span class="c1"># то же самое, но если файл существует, он не будет перезатираться</span>
+<span class="c1"># результат просто дозапишется в конец</span>
+</code></pre></div>
+
+<p><code>&gt;</code> перенаправление в файл, перезаписывает файл, если файла нет, то он будет создан</p>
+<p><code>&gt;&gt;</code> перенаправление в файл, добавляет в конец, если файла нет, то он будет создан</p>
+<h3 id="_13">Пайпы</h3>
+<p>Пайпом называется прямая черта <code>|</code>, с помощью которой можно строить команды по принципу конвейера — то есть, результат выполнения прошлой команды будет передаваться на вход следующей команде:</p>
+<div class="codehilite"><pre><span></span><code>cat file <span class="p">|</span> grep <span class="s1">&#39;#&#39;</span>
+<span class="c1"># передали содержимое файла file в grep, </span>
+<span class="c1"># который поискал в этом содержимом символ решетки</span>
+
+cat file <span class="p">|</span> grep <span class="s1">&#39;#&#39;</span> <span class="p">|</span> wc -l
+<span class="c1"># передали содержимое файла file в grep, </span>
+<span class="c1"># который поискал в этом содержимом символ решетки,</span>
+<span class="c1"># и далее передали на подсчет команде wc (word count),</span>
+<span class="c1"># чтобы посчитать количество слов с решеткой</span>
+
+cat file <span class="p">|</span> grep <span class="s1">&#39;#&#39;</span> <span class="p">|</span> wc -l &gt; str_with_hash
+<span class="c1"># записали результат сразу в файл</span>
+</code></pre></div>
+
+<p>Пайпы отлично демонстрируют базовые принципы Unix (так называемый «unix way» — одна программа (команда) делает что-то одно, но делает это хорошо, а текст выступает в качестве универсального интерфейса взаимодействия между такими программами (командами). </p>
+<p>В данном случае мы использовали команду <code>cat</code>, которая делает что-то одно и передает результат своей работы дальше, следующей команде, а потом еще дальше. При этом команды передают друг другу результат выполнения как обычный текст (текстовый интерфейс). </p>
+<h3 id="_14">Консольные редакторы текста</h3>
+<p>Среди консольных редакторов можно выделить vi(m) и nano. Для знакомства мы рассмотрим nano, потому что он проще. И далее в курсе Нано будет дефолтным консольным редактором текста. Про него и поговорим.</p>
+<p>Команда <code>nano</code> — запустить консольный редактор nano (привет, кэп!):</p>
+<p><img alt="" src="/img/nano.png" /></p>
+<p>Нано очень дружелюбный: внизу у него есть список горячих клавиш (значок <code>^</code> означает <code>Ctrl</code>). Попрактикуйся немного с ними, это понадобится для выполнения практического задания. </p>
+<p><code>nano file</code> — открыть в редактое файл с именем <code>file</code>, если такой файл отсутствует, то он будет создан с пустым содержимым.</p>
+<p>Чтобы сохранить, нажми <em>Ctrl+O</em></p>
+<p>Чтобы выйти, нажми <em>Ctrl+X</em>, <strong>Yes</strong>. Если файл был изменен, тебе предложат его сохранить. </p>
+<p>Вим (или его предшественник <em>vi</em>) не похож на Нано. Он очень сложный и мощный, но нужно потратить много времени, чтобы научиться им пользоваться. А предварительно освоить <a href="https://ru.wikipedia.org/wiki/Слепой_метод_печати">слепой метод набора</a>. Ещё существует emacs, про него можно сказать то же самое. </p>
+<h2 id="_15">Полезности.</h2>
+<p><strong>Автозаполнение</strong>. Начинай вводить имя файла и нажми Tab.</p>
+<p><strong>История команд</strong>. Стрелочками на клавиатуре можно возвращать уже выполненные команды, чтобы снова их не набирать. Попробуй понажимать стрелку вверх. История команд сохраняется в файле .bash_history и вызывается командой <code>history</code></p>
+<p><strong>Очистить экран.</strong>  <code>Ctrl + l</code> или <code>clear</code></p>
+<h2 id="_16">Дальнейшее изучение</h2>
+<p>Книга "Unix и Linux. Руководство системного администратора" (<strong>5-е издание</strong>)</p>
+<h2 id="_17">Практика</h2>
+<p>В качестве практического задания тебе предстоит подключиться к удалённому серверу, который расположен в Амстердаме, и выполнить на нём некоторые действия.</p>
+<p>Напоминаю, что все практические задания должны быть зачтены до 23:59:59 субботы (GMT+3), иначе нам придется попрощаться. Чтобы этого не произошло, выполняй всё как можно раньше, не оставляй на потом.</p>
+<p>Открой терминал. Подключись к удаленному серверу с помощью команды <code>ssh</code>:</p>
+<div class="codehilite"><pre><span></span><code>ssh username@host
+</code></pre></div>
+
+<p>Замени <code>username</code> и <code>host</code> на значения, которые тебе отправили в Телеграме. Далее потребуется ввести пароль, не пугайся, что его символов не будет видно — это сделано для безопасности. Пароль ты так же найдешь в сообщении Телеграма.</p>
+<p>При первом подключении к серверу появится примерно такое сообщение:</p>
+<div class="codehilite"><pre><span></span><code>The authenticity of host cannot be established.
+Are you sure you want to <span class="k">continue</span> connecting? <span class="o">(</span>yes/no<span class="o">)</span>?
+</code></pre></div>
+
+<p>Набери <code>yes</code> и нажми <em>Enter</em>. </p>
+<p>Ты на сервере, можешь выполнять задания. </p>
+<p>Если станет скучно и одиноко в процессе выполнения, можно развлечься следующими командами:
+<code>w</code> (<code>who</code>) посмотреть кто сейчас подключен к серверу
+<code>write &lt;username&gt;</code> написать сообщение, заменив <code>&lt;username&gt;</code> на имя пользователя, который сейчас онлайн. Чтобы закончить, нажми <strong>Ctrl+D</strong>
+<code>wall</code> написать сообщение всем, кто сейчас онлайн! Вводишь команду <code>wall</code>, жмешь <em>Enter</em>, пишешь послание, нажимаешь <strong>Ctrl+D</strong>. Отправлено.</p>
+<h2 id="1"><strong>Задание 1</strong></h2>
+<p>Задание для разогрева и проверки умения гуглить. Нужно изменить на удаленном сервере свой пароль по умолчанию (тот, который тебе прислали в телеграме). Твой дефолтный пароль <strong>сгорит через три дня</strong>, поэтому поспеши. Позаботься о том, чтобы пароль был сложным: на сервере орудует злоумышленник и если ему удастся сбрутфорсить твой пароль, то это может плохо закончиться ;)</p>
+<h2 id="2"><strong>Задание 2</strong></h2>
+<p>Измени права доступа своей домашней директории (и всего, что вложено), запрети любой доступ другим пользователям, чтобы никто не мог в неё зайти и стащить твою домашку. После того, как это сделаешь, можешь попытаться стащить у кого-нибудь домашку ;) </p>
+<h2 id="3"><strong>Задание 3</strong></h2>
+<p>Убедись, что ты находишься в домашней директории. Там есть директория <code>a49e51672b547a9a</code>, где-то в её недрах потерялся один файл, твоя задача найти его и вернуть (переместить) домой (в домашнюю директорию). После этого удали все директории, должен остаться только файл. Чтобы не печатать эти сложные названия вручную, вспомни про автодополнение — введи пару первых символов и нажми <em>Tab</em>. </p>
+<h2 id="4"><strong>Задание 4</strong></h2>
+<p>Посчитай количество вхождений смертельного заклинания в фанфик <strong>Гарри Поттер и Методы Рационального Мышления</strong> (файл <code>/home/hpmor.txt</code>) и сохрани это <strong>число</strong> в файл <code>hpmor_practice_count</code> в домашней директории. Также сохрани все <strong>предложения</strong>, по каждому на строку, в которых содержится смертельное заклинание, в файл <code>hpmor_practice_sentences</code> в домашней директории. </p>
+<h2 id="5"><strong>Задание 5</strong></h2>
+<p>Считай переменную окружения <code>SECRET_ENV</code> и добавь её содержимое в файл с Задания 3. Мы это не проходили, поэтому найди информацию самостоятельно. </p>
+<h2 id="6"><strong>Задание 6</strong></h2>
+<p>Создай в своем любимом текстовом редакторе файл <code>hi</code> и оставь любое послание автору курса, файл сохрани в домашней директории.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+        
+          <a href="../git/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Вперед
+                </span>
+                Гит и Гитхаб
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            copyleft &copy; copyright
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,772 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.4">
+    
+    
+      
+        <title>Гит и Гитхаб - python 101 course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.358818c7.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f0267088.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="indigo">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="python 101 course" class="md-header-nav__button md-logo" aria-label="python 101 course">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            python 101 course
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Гит и Гитхаб
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../bash/" class="md-tabs__link md-tabs__link--active">
+          Первая неделя
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../week2/github/" class="md-tabs__link">
+          Вторая неделя
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../week3/vscode/" class="md-tabs__link">
+          Третья неделя
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../week4/api/" class="md-tabs__link">
+          Четвертая неделя
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="python 101 course" class="md-nav__button md-logo" aria-label="python 101 course">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    python 101 course
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Первая неделя
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Первая неделя" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Первая неделя
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bash/" class="md-nav__link">
+      Линукс и Баш
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Гит и Гитхаб
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Гит и Гитхаб
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    Git как система контроля версий
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-" class="md-nav__link">
+    GitHub как сервис хостинга гит-репозиториев.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Самостоятельное чтение
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Практика
+  </a>
+  
+    <nav class="md-nav" aria-label="Практика">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    Задание 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    Задание 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    Задание 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Вторая неделя
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Вторая неделя" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Вторая неделя
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week2/github/" class="md-nav__link">
+      GitHub Flow и ветки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week2/bash-scripting/" class="md-nav__link">
+      Bash-скриптинг
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Третья неделя
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Третья неделя" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Третья неделя
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week3/vscode/" class="md-nav__link">
+      Настройка окружения
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week3/python_intro/" class="md-nav__link">
+      Основы Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week3/if_for/" class="md-nav__link">
+      Ветвления и итерации
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Четвертая неделя
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Четвертая неделя" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Четвертая неделя
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week4/api/" class="md-nav__link">
+      Интерфейсы и API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../wtf/" class="md-nav__link">
+      Что здесь происходит?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../done/" class="md-nav__link">
+      Что значит «сделать»
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    Git как система контроля версий
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-" class="md-nav__link">
+    GitHub как сервис хостинга гит-репозиториев.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Самостоятельное чтение
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Практика
+  </a>
+  
+    <nav class="md-nav" aria-label="Практика">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    Задание 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    Задание 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    Задание 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">Гит</h1>
+<p>Код нужно хранить в <strong>репозиториях</strong>. Работать с репозиториями позволяет консольная утилита Git. В этом уроке у тебя будет первое знакомство с Гитом.</p>
+<h2 id="git"><strong>Git</strong> как система контроля версий</h2>
+<p>Гит — это система контроля версий. Позволяет версионировать твой код. Что значит версионировать? Приведу аналогию — ты "сохраняешься" в компьютерных играх, и можешь откатиться назад, например если что-то пошло не так или если тебя убили. Так же и здесь, репозиторий хранит всю историю изменений твоего кода — начиная от первого сохранения. И ты можешь возвращаться к прошлым версиям, когда что-то идёт не так. </p>
+<p>Ещё Гит дает возможность безопасно и комфортно работать над одним проектом большой командой. По гиту можно делать отдельный курс, потому что это очень мощный инструмент, но для начала нам хватит менее десяти команд для работы. </p>
+<p>Если у тебя Мак или Линукс, а также если ты установил Git Bash на Винде, то Гит уже есть, поэтому приступим сразу к делу. Если не установлен, то установи, <strong>пиши в чат</strong> при затруднениях.</p>
+<h2 id="github-"><strong>GitHub</strong> как сервис хостинга гит-репозиториев.</h2>
+<blockquote>
+<p><em>Болтовня ничего не стоит. Покажите мне код.</em>
+— Linus Torvalds</p>
+</blockquote>
+<p>Тебе не обязательно хранить свои git-репозитории на Гитхабе, существует много других сервисов, например <a href="https://gitlab.com">GitLab</a> или <a href="https://bitbucket.org">Bitbucket</a>, но мы будем пользоваться Гитхабом, потому что он самый популярный. А ещё Гитхаб это своего рода портфолио разработчика и по нему судят о том, на что ты способен, поэтому, пожалуйста, относить серьезно к своему Гитхабу с самого начала. </p>
+<p>Зайди на <a href="https://github.com/">https://github.com</a> и зарегистрируйся. Запомни свое имя пользователя, это понадобится для настройки Гита.</p>
+<p>После успешного подтверждения адреса электронной почты создай свой первый репозиторий.</p>
+<p><img alt="" src="/img/new_repo.png" /></p>
+<p>Названия репозиториев на GitHub'е принято оформлять в <strong>kebab-case</strong> (представь, что "насаживаешь" слова на палочку 🍡, отсюда и название). Пример: <code>my-awesome-name</code></p>
+<p>Если сомневаешься с названием, то Гитхаб предложит тебе что-нибудь забавное, можешь согласиться. </p>
+<p>Поставить галочку на <code>Initialize this repository with a README</code>и жми Create repository.</p>
+<p>Репозиторий создан! Теперь клонируем его к себе на машину. На этой неделе мы работаем на удаленном сервере, поэтому подключись к нему снова и <strong>все дальнейшие команды выполняй на сервере в своей домашней директории</strong>. </p>
+<p>Перед началом работы с Гитом необходимо выполнить первоначальную настройку. Это делается только один раз. Выполни две команды, подставив свои username и email (внимание, username должен совпадать с тем, который был при регистрации на Гитхабе):</p>
+<div class="codehilite"><pre><span></span><code>git config --global user.name <span class="s2">&quot;твоё-имя-пользователя-в-кавычках&quot;</span>
+git config --global user.email твой@имейл.com
+</code></pre></div>
+
+<p>Скопируй строчку из адресной строки открытого в браузере репозитория или по нажатию на зеленую кнопку <code>Clone or download</code>, ты её сразу заметишь. Затем клинируй (так называется процесс переноса удаленного репозитория к себе на машину) репозиторий:</p>
+<div class="codehilite"><pre><span></span><code>git clone &lt;адрес-репозитория-который-ты-берешь-из-браузера&gt;
+</code></pre></div>
+
+<p>Теперь перейди в репозиторий командой <code>cd &lt;имя-репозитория&gt;</code>, <strong>убедись, что ты внутри</strong>. Там будет файл README.md, который содержит информацию о твоем репозитории. </p>
+<p>Давай теперь напишем простейшую программу и отправим её жить в репозиторий. Открой текстовый редактор Nano и набери:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;Hello world!&quot;</span>
+</code></pre></div>
+
+<p>Сохрани файл под именем <code>hello.sh</code>. </p>
+<p>Набери <code>git status</code>. Запомни эту команду, она позволяет "осмотреться" и понять, что изменилось. <code>git status</code> сразу сообщит, что в репозитории появился новый <em>неотслеживаемый</em> файл (правильно, мы же его создали только что) и предложит добавить его в индекс командой <code>git add</code>, мы так и сделаем:</p>
+<div class="codehilite"><pre><span></span><code>git add hello.sh
+</code></pre></div>
+
+<p>Снова выполни команду <code>git status</code>и посмотри, что изменилось. Теперь файл добавлен в индекс и его изменения отслеживаются. Давай сохраним это состояния командой <code>git commit</code>. Выполнить коммит — значит зафиксировать текущее состояние репозитория, как бы сохраниться. Каждый коммит имеет свой уникальный номер и сообщение, в котором содержится краткое описание изменений. Выполни команду:</p>
+<div class="codehilite"><pre><span></span><code>git commit -m <span class="s1">&#39;my first commit&#39;</span>
+</code></pre></div>
+
+<p>Теперь остался последний шаг — запушить (то есть отправить) изменения на Гитхаб. То есть как бы синхронизировать свой локальный репозиторий и удаленный. Это делается с помощью команды <code>git push</code>. Сделай это и вернись в браузер, чтобы посмотреть свой коммит. </p>
+<p>Пока на этом всё для первого знакомства. Дальше — больше. Начиная со следующей недели мы будем погружаться в Гит больше и изучать новые возможности. Это тот инструмент, который всегда будет с тобой, поэтому важно его хорошо освоить.</p>
+<h2 id="_2">Самостоятельное чтение</h2>
+<p>Вот классическая книга по гиту, тебе нужно прочесть из неё две первых главы:</p>
+<p><a href="https://git-scm.com/book/ru/v2">https://git-scm.com/book/ru/v2</a> (главы Введение и Основы Git)</p>
+<h2 id="_3">Практика</h2>
+<h3 id="1">Задание 1</h3>
+<p>Прочесть первые две главы <a href="https://git-scm.com/book/ru/v2">книги Pro Git</a></p>
+<h3 id="2">Задание 2</h3>
+<p>Зарегистрироваться на Гитхабе, создать репозиторий и запушить в него helloworld (мы это делали по ходу урока, просто убедись что сделано). Если у тебя уже была на Гитхабе что-то сложнее helloworld'а, то пропускай это задание.</p>
+<h3 id="3">Задание 3</h3>
+<p>Оставь ссылку на свой репозиторий первой строкой в файле <code>repo</code> в домашней директории, формат ссылки: <code>https://github.com/username</code>. Внутри файла не должно быть ничего, кроме ссылки.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../bash/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Назад
+                </span>
+                Линукс и Баш
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../week2/github/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Вперед
+                </span>
+                GitHub Flow и ветки
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            copyleft &copy; copyright
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

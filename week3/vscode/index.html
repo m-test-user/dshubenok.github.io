@@ -1,0 +1,779 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.4">
+    
+    
+      
+        <title>Настройка окружения - python 101 course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.358818c7.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f0267088.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="indigo">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="python 101 course" class="md-header-nav__button md-logo" aria-label="python 101 course">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            python 101 course
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Настройка окружения
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../week1/bash/" class="md-tabs__link">
+          Первая неделя
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../week2/github/" class="md-tabs__link">
+          Вторая неделя
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Третья неделя
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../week4/api/" class="md-tabs__link">
+          Четвертая неделя
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="python 101 course" class="md-nav__button md-logo" aria-label="python 101 course">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    python 101 course
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Первая неделя
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Первая неделя" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Первая неделя
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week1/bash/" class="md-nav__link">
+      Линукс и Баш
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week1/git/" class="md-nav__link">
+      Гит и Гитхаб
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Вторая неделя
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Вторая неделя" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Вторая неделя
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week2/github/" class="md-nav__link">
+      GitHub Flow и ветки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week2/bash-scripting/" class="md-nav__link">
+      Bash-скриптинг
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Третья неделя
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Третья неделя" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Третья неделя
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Настройка окружения
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Настройка окружения
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Задротский подход
+  </a>
+  
+    <nav class="md-nav" aria-label="Задротский подход">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Первый этап. Научись печатать вслепую
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Второй этап. Отказаться от мышек/тачпадов во время работы
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Третий этап. Экспериментируем
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Традиционный подход
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Практика
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python_intro/" class="md-nav__link">
+      Основы Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../if_for/" class="md-nav__link">
+      Ветвления и итерации
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Четвертая неделя
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Четвертая неделя" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Четвертая неделя
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../week4/api/" class="md-nav__link">
+      Интерфейсы и API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../wtf/" class="md-nav__link">
+      Что здесь происходит?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../done/" class="md-nav__link">
+      Что значит «сделать»
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Задротский подход
+  </a>
+  
+    <nav class="md-nav" aria-label="Задротский подход">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Первый этап. Научись печатать вслепую
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Второй этап. Отказаться от мышек/тачпадов во время работы
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Третий этап. Экспериментируем
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Традиционный подход
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Практика
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Настройка окружения</h1>
+                
+                <p>В прошлых уроках мы писали код в консольном редакторе Nano. Это бывает не очень удобно. </p>
+<p>Можно выделить два подхода к написанию кода. Условно назовём их "задротский" и "традиционный". В нашем курсе рекомендуется придерживаться традиционного подхода.</p>
+<h2 id="_1">Задротский подход</h2>
+<p>Это можно сравнить с тем, когда ты намеренно очень много времени уделяешь обработке эффективности, чтобы потом ~~ебашить~~ писать код со скоростью мысли. Кому зашли первые недели курса и кому хочется стать программистом-ниндзя — рекомендую присмотреться. Остальным лучше перейти к традиционному. Итак, задротский подход условно разделить на три этапа. </p>
+<h3 id="_2">Первый этап. Научись печатать вслепую</h3>
+<p>Нужно научиться правильно печатать. Тут не имеется в виду "не смотреть на клавиатуру", это понятно, что ты и так на неё почти не смотришь. Тут про освоение такого навыка набора, когда за каждым пальцем закреплены строго определенные клавиши и твои пальцы всегда стоит на позиции "фыва олдж" (четыре пальца левой руки на "фыва", четыре пальца правой руки на "олдж", большие пальцы на пробеле) и никуда с нее не перемещаются. На клавиатуре есть специальные <strong>засечки</strong> на клавишах "а" и "о", они для того, чтобы указательные пальцы всегда нащупывали это положение и не перемещались.</p>
+<p>Это совсем иной навык набора и его надо приобретать, отрабатывая до автоматизма. Есть специальные курсы для этого:</p>
+<ol>
+<li>Иди на <a href="https://www.ratatype.ru/learn/">https://www.ratatype.ru/learn</a>, читай, осознавай. Проходи этот курс для английской раскладки. Не следует стремиться выполнить каждое задание без ошибок, лучше быстро двигаться вперед. Особое внимание обращай на правильную постановку рук. Распечатай или нарисуй табличку соответствия <strong>клавиш:пальцев</strong> и закрепи на видном месте (возле монитора), чтобы иногда подсматривать (на листочек, не на клавиатуру!). Долго на этом ресурсе не зависай, как только становится скучно - переходи к пункту 2:</li>
+<li>Добавляем фан в процесс, это очень важно! Для добавления фана:
+<a href="http://zty.pe/">http://zty.pe</a> играй в эту игру, она крутая
+<a href="https://klava.org/delta/#eng_code_python">https://klava.org/delta/#eng_code_python</a> учись набирать конструкции твоего любимого языка программирования, чтобы довести их до автоматизма
+Чередовать с <a href="https://www.ratatype.ru/">https://www.ratatype.ru/</a>, пока не пройдешь его.</li>
+<li>Не при каких обстоятельствах не смотри на клавиатуру и не возвращайся к старой привычке набора, иначе ничего не выйдет. Так ты быстро дойдешь до "точки невозврата", когда новый стиль набора навсегда заменит старый. В течение дня полезно тыкать пальцами в воздух какие-нибудь символы, например в общественном транспорте или на скучной лекции. Так быстрее закрепятся навыки.
+Первое время скорость набора упадет в несколько раз, надо принять этот факт, но потом она повысится и станет намного выше прежней, а еще спустя какое-то время появится заветный автоматизм и слова и фразы будут появляться на экране сами по себе. Этого надо достичь. </li>
+</ol>
+<p>Как только появится автоматизм, переходи ко второму этапу.</p>
+<h3 id="_3">Второй этап. Отказаться от мышек/тачпадов во время работы</h3>
+<p>Тут два основных момента: освоение vim и использование горячих клавиш bash. Также отключаем мышь и помещаем её в какой-нибудь дальний ящик. </p>
+<p>Смысл редактора vi (vim) в том, чтобы максимально повысить скорость редактирования текста. Но у него ОЧЕНЬ высокий входной порог: нужно владеть слепым десятипальцевым методом и нужно потратить несколько месяцев на то, чтобы изучить его основные режимы работы и команды. Не получится так, как было с Nano — запустил, поработал и закрыл. Без предварительной подготовки получится только запустить. Поработать не получится. Выйти тоже не получится :)) Итак, вим:</p>
+<ol>
+<li>Читаем про vim (гуглим), запускаем команду <code>vimtutor</code> и проходим этот встроенный туториал (займет не более часа). Там будут основы. С этого момента пишем код только в виме. Получится как со слепым методом набора: сначала будет очень неудобно и захочется всё бросить, скорость работы резко упадет и всё будет бесить — нужно принять это и продолжать дальше. В какой-то момент ты испытаешь просветление и будешь жалеть, что не открыл для себя вим раньше) </li>
+<li>Учимся создавать вкладки терминала (tabs) и переключаться между ними, а также делить вкладку (tab) на части вертикально и горизонтально (split) и прыгать по частям без мышки и тачпада. Делить терминал на части и перемещаться по ним — это важно. Ставим в ОС горячие клавиши на появление и скрытие терминала, чтобы он всегда был в двух нажатиях клавиш. Основной упор вот на эту прекрасную статью, она описывает эффективную работу в терминале: <a href="https://dwmkerr.com/effective-shell-part-1-navigating-the-command-line/">https://dwmkerr.com/effective-shell-part-1-navigating-the-command-line/</a></li>
+<li>Подружим vim и bash: можно использовать NERDTree, можно разделить терминал на две части — в одной вим, в другой баш, можно открыть их в разных вкладках. Важно найти для себя способ быстро переключаться между ними и кайфануть от отсутствия ненужных графических прослоек. </li>
+</ol>
+<p>Теперь важный вопрос. А как же сидеть в интернете??? Для вимеров открыты возможности, которые недоступны другим. Например, есть специальный вим-браузер <a href="https://www.qutebrowser.org/">https://www.qutebrowser.org</a> , также есть плагины для всех популярных браузеров, ты легко сможешь их найти. Скорость перемещения по интернету так же увеличится на порядок. </p>
+<p>Помни про то, что важен фан: как только станет скучно — иди на <a href="https://www.shortcutfoo.com/">https://www.shortcutfoo.com</a> и <a href="https://vim-adventures.com/">https://vim-adventures.com</a></p>
+<p>Как только немного освоишься с терминалом, вимом и вим-браузером, переходи к третьему этапу.</p>
+<h3 id="_4">Третий этап. Экспериментируем</h3>
+<p>Открываем для себя дополнительные возможности инструментов и наращиваем функционал. Экспериментируем с другими инструментами.</p>
+<ol>
+<li>Баш — самая популярная оболочка, но далеко не единственная. Попробуй zsh (<a href="https://ohmyz.sh/">https://ohmyz.sh</a>), fish (<a href="https://fishshell.com/">https://fishshell.com</a>) или что-нибудь ещё. Сделай свой личный выбор. </li>
+<li>Если у тебя Мак — установи <a href="https://iterm2.com/">https://iterm2.com</a> и настрой его под себя. Если Линукс — <a href="https://gnometerminator.blogspot.com/p/introduction.html">https://gnometerminator.blogspot.com</a> Поэкспериментируй со всеми настройками и оцени, насколько они могут быть полезными.</li>
+<li>Изучи tmux <a href="https://github.com/tmux/tmux">https://github.com/tmux/tmux</a> и научись с ним работать. </li>
+<li>Почитай о проекте <a href="https://neovim.io/">https://neovim.io</a> и попробуй его. </li>
+<li>Установи менеджер плагинов для своего вима, поставь самые популярные плагины, сделай из вима полноценную IDE (с подсветкой кода, автодополнением и тд), слепи собственный .vimrc и сохрани в удаленный репозиторий, чтобы в случае чего загружать собственные настройки на новом месте.</li>
+<li>Посмотри, что ещё существует кроме вима: слышал про Emacs? </li>
+</ol>
+<p>Также вим-режим есть во всех популярных IDE и редакторах кода — VSCode, PyCharm и так далее. </p>
+<h2 id="_5">Традиционный подход</h2>
+<p>В традиционном подходе предпочтение отдается графическим интерфейсам и горячим клавишам. У тебя может стоять как мощная IDE (Integrated Development Environment, интегрированная среда разработки), вроде <a href="https://www.jetbrains.com/ru-ru/pycharm/">PyCharm</a>'а, так и легковесный, быстрый и гибкий редактор кода, вроде <a href="https://code.visualstudio.com">VSCode</a>. Попробуй оба варианта, но для первого знакомства, небольших проектов и нашего курса рекомендуется использовать VS Code. </p>
+<p>Скачай и установи VS Code: <a href="https://code.visualstudio.com/">https://code.visualstudio.com</a> </p>
+<p>Открой вкладку <em>Extensions</em> (кнопка слева, под "жучком") и установи пакет <code>python</code>(это нужно для того, чтобы настроить редактор для работы с Питоном)</p>
+<p>Открой меню: <em>Terminal</em> → <em>New terminal</em> (внизу должен появиться терминал, с ним будет удобнее, чтобы не переключаться между разными окошками)</p>
+<p>Открой меню: <em>Help</em> → <em>Keyboard shortcuts reference</em>, распечатай этот PDF и осваивай хотя бы по одной горячей клавише в день, использование горячих клавиш очень сильно экономит время. </p>
+<p>Давай напишем какой-нибудь простой код на питоне и запустим его. Открой новую вкладку, нажав на клавиатуре <code>Ctrl+N</code> (мы пользуемся только горячими клавиши, помнишь? так быстрее):</p>
+<p><img alt="" src="/img/vscode_new.png" /></p>
+<p>Напиши следующий код:</p>
+<div class="codehilite"><pre><span></span><code>print<span class="o">(</span><span class="s1">&#39;hello world&#39;</span><span class="o">)</span>
+</code></pre></div>
+
+<p>Сохрани файл нажатием <code>Ctrl+S</code>. После сохранения в правом верхнем углу редактора появится зеленая стрелочка:</p>
+<p><img alt="" src="/img/green_arrow.png" /></p>
+<p>Нажми на неё, чтобы запустить код. Результат ты увидишь в терминале внизу. </p>
+<p>Так, запускать код научились (найди горячую клавишу для запуска), Терминал с Башем добавили. Теперь Гит.</p>
+<p>Снова нажми <code>Ctrl+N</code>. Открой вкладку <em>Source Control</em> (кнопка слева, над "жучком"):</p>
+<p><img alt="" src="/img/vscode_git.png" /></p>
+<p>VS Code предлагает открыть папку с имеющимся репозиторием или клонировать существующий с Гитхаба. Выбери второй вариант и установи плагин с работы с GitHub'ом, там нужно будет перейти в браузер и ввести пароль. Затем будет ещё куча манипуляций, после чего тебе нужно будет выбрать один из существующих репозиториев и место, куда его сохранить. </p>
+<p>Теперь твоя задача потратить пару часов и разобраться с тем, как работать с Гитом в VS Code. Ты уже знаешь основные принципы и вот тебе официальная дока: </p>
+<p>раз <a href="https://code.visualstudio.com/docs/editor/versioncontrol">https://code.visualstudio.com/docs/editor/versioncontrol</a></p>
+<p>два <a href="https://code.visualstudio.com/docs/editor/github">https://code.visualstudio.com/docs/editor/github</a></p>
+<p>В VS Code <strong>очень</strong> удобно работать с Гитом, и когда ты разберешься, у тебя скорее всего больше не будет с ним проблем. </p>
+<p>А теперь клонируй в VS Code свой репозиторий с проектом srm и попробуй что-нибудь улучшить в нём и пушнуть на Гитхаб. Например, почти все на курсе закинули ненужный пока файл <code>.gitignore</code> для Питона в этот проект. Удали его и пушни изменения. </p>
+<p>Или найди опечатки в README (тоже у многих они были) и пушни изменения прямо из VS Code. </p>
+<p>Если совсем нечего улучшать, то всегда можно что-нибудь добавить:</p>
+<p><img alt="" src="/img/nya.jpg" /></p>
+<p>Так, запускать код научились. Терминал подключили. Гит тоже. </p>
+<p>Ниже будет практика, она для самопроверки, сдавать работу не нужно.</p>
+<p>В следующих уроках мы познакомимся с основами Питона и продолжим настраивать VS Code.</p>
+<h2 id="_6">Практика</h2>
+<ul>
+<li>Установить <a href="https://code.visualstudio.com">VS Code</a></li>
+<li>Установить пакет <code>Python</code></li>
+<li>Подключить Терминал</li>
+<li>Распечатать или сохранить на видном месте <em>Keyboard shortcuts reference</em></li>
+<li>Научиться запускать код на Питоне</li>
+<li>Подключить Гитхаб-аккаунт и клонировать репозиторий с твоим проектом srm</li>
+<li>Что-нибудь исправить в репозитории с проектом srm и пушнуть изменения (цель — поработать с Гитом в VS Code)</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../week2/bash-scripting/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Назад
+                </span>
+                Bash-скриптинг
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../python_intro/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Вперед
+                </span>
+                Основы Python
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            copyleft &copy; copyright
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
