@@ -23,6 +23,8 @@ nav:
     - Настройка окружения: week3/vscode.md
     - Основы Python: week3/python_intro.md
     - Ветвления и итерации: week3/if_for.md
+  - Четвертая неделя:
+    - Интерфейсы и API: week4/api.md
   - Что здесь происходит?: wtf.md
   - Что значит «сделать»: done.md
 
