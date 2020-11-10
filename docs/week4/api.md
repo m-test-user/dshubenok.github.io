@@ -56,7 +56,7 @@ REST API — это правила для передачи данных по с�
 import requests
 
 response = requests.get('https://python101.online')
-print(r.text)
+print(response.text)
 ```
 
 В ответ придёт HTML-код страницы сайта нашего курса:
